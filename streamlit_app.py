@@ -27,11 +27,8 @@ streamlit.dataframe(fruits_to_show)
 streamlit.header("Fruityvice Fruit Advice!")
 
 # define function get_fruityvice_data
-def get_fruityvice_data
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    #streamlit.text(fruityvice_response.json()) ##display data on screen as json content
-
-    # write your own comment -what does the next line do? 
+def get_fruityvice_data(this_fruit_choice)
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
   
